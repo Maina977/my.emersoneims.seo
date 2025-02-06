@@ -1,0 +1,16 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    data = {
+        "description": "Professional generator maintenance, repair, and installation services across East Africa.",
+        "title": "Generator Maintenance & Services - Emerson Eims",
+        "header_title": "Reliable Generator Maintenance & Repair in East Africa",
+        "why_choose_us": "We offer expert generator maintenance, repair, leasing, and installation services."
+    }
+    return render_template("index.html", **data)
+
+if __name__ == "__main__":
+    app.run(debug=True)
